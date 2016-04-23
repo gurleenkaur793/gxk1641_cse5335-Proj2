@@ -53,3 +53,6 @@ gem 'responders', '~> 2.0'
 group :production do
   gem 'rails_12factor'
 end
+
+# ruby version
+ruby "2.2.4"
