@@ -33,7 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # add mongoid gem
 gem 'mongoid', '~> 5.1.0'
 
- # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 end
 
@@ -48,4 +49,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # getting json response
 gem 'responders', '~> 2.0'
-gem 'rails_12factor', group: :productions
+
+group :production do
+  gem 'rails_12factor'
+end
