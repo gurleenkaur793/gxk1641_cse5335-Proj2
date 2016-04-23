@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cse5335Gxk16412</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<title>Cse5335Gxk16412</title>
+	<link  rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular-animate.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+	<%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'default', 'data-turbolinks-track' => true %>
 
-<%= yield %>
+	<%= csrf_meta_tags %>
+	<style>
+		.animation.ng-enter, .animation.ng-leave {
+			-webkit-transition: 1s;
+		}
+		.animation.ng-enter {
+			opacity: 0;
+		}
+		.animation.ng-leave {
+			opacity: 1;
+		}
+		.animation.ng-enter.ng-enter-active {
+			opacity: 1;
+		}
+		.animation.ng-leave.ng-leave-active {
+			opacity: 0;
+		}
+	</style>
+	<script type="text/javascript">
 
-</body>
-</html>
+
+
+		angular.module('myapp',[])
+		.factory('persons', ['$http',function($http){
+
+			return{
+				getPersons : function(id) {
+					return $http({
+						url: '/person/'+id,
+						method: 'GET'
+					})
+				}
+			}
+
+		}])
+		.controller('myCtrl',['$scope','persons',function($scope,persons){
+
+			$scope.persons=[];
+			var counter = 1;
+
+			getdata = function(id){
+				persons.getPersons(id).success(function(data){
+					console.log(id);
+					$scope.persons.push(data);
+					counter++;
+					if(counter>20)
+						$scope.persons.shift();
+
+				});
+			};
+			setDelay = function(delay){
+				var timeout = 500;
+				setTimeout(function(){getdata(delay);},delay* timeout);
+			};
+			
+
+			$scope.startAnimation = function(){
+				
+				for(i = 1; i<=150; i++){
+					setDelay(i);
+
+				}	
+			}
+		}]);
+
+
+	</script>
+
+	<body ng-app = "myapp">
+
+
+
+
+		<%= yield %>
+
+	</body>
+	</html>

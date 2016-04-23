@@ -1,2 +1,36 @@
-<h1>Hello#index</h1>
-<p>Find me in app/views/hello/index.html.erb</p>
+<div ng-controller='myCtrl' align="center">
+
+	<button type="button" class="btn btn-info" ng-click='startAnimation()' align = "center">Get Details</button>
+
+
+	<div style="margin: 20px;">
+		
+		<table   class="table " >
+			<thead>
+				<tr>
+					
+					<th>ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Company</th>
+					<th>Zip</th>
+					
+				</tr>
+			</thead>
+			<tbody >
+				<tr ng-repeat="p in persons">
+					<td>{{p.ID}}</td>
+					<td>{{p.first_name}}</td>
+					<td>{{p.last_name}}</td>
+					<td>{{p.company_name}}</td>
+					<td>{{p.zip}}</td>
+					<!-- <td>{{carmodel.MPG}}</td>
+					<td>{{carmodel.Model}}</td>
+					<td>{{carmodel.Origin}}</td>
+					<td>{{carmodel.Weight}}</td> -->
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
