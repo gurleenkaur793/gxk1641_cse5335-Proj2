@@ -1,6 +1,6 @@
 == README
-<br>○ What aspect of the implementation did you find easy, if any, and why?</br>
-○ What aspect of the implementation did you find hard, if any, and why?</br>
-<br>○ If you were to use these technologies professionally, what would be your biggest
-concern?</br>
+<b>○ What aspect of the implementation did you find easy, if any, and why?</b><br/>
+<b>○ What aspect of the implementation did you find hard, if any, and why?</b><br/>
+<b>○ If you were to use these technologies professionally, what would be your biggest
+concern?</b><br/>
 
