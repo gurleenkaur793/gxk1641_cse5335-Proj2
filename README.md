@@ -6,4 +6,4 @@
 <b><ul><li>○ If you were to use these technologies professionally, what would be your biggest
 concern?</li></ul></b>
 -->MONGODB-requires a lot of memory.<br>
-  ANGULAR JS- Lack of documentation makes it difficult to understand.
+  ANGULAR JS- Runtime configuration is one thing that a programmer should be aware of. The changes are uploaded upfront so it might pose problem for security reasons.
